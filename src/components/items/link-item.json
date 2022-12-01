@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_items_link_items",
+  "info": {
+    "displayName": "LinkItem",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "solid",
+        "outline",
+        "text"
+      ],
+      "default": "solid"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

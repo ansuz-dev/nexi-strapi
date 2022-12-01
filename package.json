@@ -1,0 +1,43 @@
+{
+  "name": "nexi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "lint": "eslint config src --fix"
+  },
+  "devDependencies": {
+    "@keeex/eslint-config": "^1.8.2",
+    "@strapi/helper-plugin": "^4.5.3",
+    "axios": "^1.2.0",
+    "eslint": "8.27.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.5.3",
+    "@strapi/plugin-users-permissions": "4.5.3",
+    "@strapi/strapi": "4.5.3",
+    "better-sqlite3": "7.4.6",
+    "react-select": "^5.7.0"
+  },
+  "author": {
+    "name": "Ansuz Development"
+  },
+  "strapi": {
+    "uuid": "c562deec-e361-419a-b572-c9df3ee0cc8f"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
