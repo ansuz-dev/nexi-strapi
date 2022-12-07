@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": "Create general page"
+  },
+  "options": {
+    "draftAndPublish": true,
+    "comment": ""
+  },
+  "pluginOptions": {
+    "content-manager": {
+      "visible": false
+    },
+    "content-type-builder": {
+      "visible": false
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "cover": {
+      "type": "media",
+      "allowedTypes": [
+        "images"
+      ],
+      "multiple": false
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+      ]
+    }
+  }
+}
