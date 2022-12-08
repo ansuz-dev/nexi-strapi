@@ -1,3 +1,3 @@
-# Strapi plugin nexi
+# Strapi Nexi
 
-A quick description of nexi.
+Quickly setup required components and content-types for Nextjs/Nexi project.
