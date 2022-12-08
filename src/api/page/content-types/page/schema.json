@@ -4,12 +4,10 @@
   "info": {
     "singularName": "page",
     "pluralName": "pages",
-    "displayName": "Page",
-    "description": "Create general page"
+    "displayName": "Page"
   },
   "options": {
-    "draftAndPublish": true,
-    "comment": ""
+    "draftAndPublish": true
   },
   "attributes": {
     "title": {
@@ -32,8 +30,7 @@
     },
     "sections": {
       "type": "dynamiczone",
-      "components": [
-      ]
+      "components": []
     }
   }
 }

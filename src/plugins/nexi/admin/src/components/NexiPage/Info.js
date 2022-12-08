@@ -10,7 +10,6 @@ import getTrad from "../../utils/getTrad";
 import SingleTypePanel from "./SingleTypePanel";
 import CollectionTypePanel from "./CollectionTypePanel";
 import SectionComponentPanel from "./SectionComponentPanel";
-import ItemComponentPanel from "./ItemComponentPanel";
 
 const Info = () => {
   const {formatMessage} = useIntl();
@@ -18,14 +17,6 @@ const Info = () => {
     <Box padding={8}>
       <TabGroup label="label" id="tabs">
         <Tabs>
-          <Tab>
-            <Typography variant="omega">
-              {formatMessage({
-                id: getTrad("NexiPage.tab.item-title"),
-                defaultMessage: "Item components",
-              })}
-            </Typography>
-          </Tab>
           <Tab>
             <Typography variant="omega">
               {formatMessage({
@@ -52,7 +43,6 @@ const Info = () => {
           </Tab>
         </Tabs>
         <TabPanels>
-          <ItemComponentPanel />
           <SectionComponentPanel />
           <CollectionTypePanel />
           <SingleTypePanel />
@@ -61,8 +51,6 @@ const Info = () => {
     </Box>
   );
 };
-
-Info.defaultProps = {contentTypes: {}};
 
 Info.propTypes = {};
 

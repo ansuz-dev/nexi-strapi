@@ -4,12 +4,10 @@
   "info": {
     "singularName": "navbar",
     "pluralName": "navbars",
-    "displayName": "Navbar",
-    "description": "Manage navbar's content"
+    "displayName": "Navbar"
   },
   "options": {
-    "draftAndPublish": false,
-    "comment": ""
+    "draftAndPublish": false
   },
   "attributes": {
     "layout": {

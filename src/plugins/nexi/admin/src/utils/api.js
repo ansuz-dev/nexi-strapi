@@ -1,9 +1,19 @@
 import pluginId from "../pluginId";
 import apiInstance from "./axiosInstance";
 
-export const getStatus = async () => {
+export const getVersion = async () => {
   try {
-    const res = await apiInstance.get(`/${pluginId}/status`);
+    const res = await apiInstance.get(`/${pluginId}/version`);
+
+    return res.data;
+  } catch (error) {
+    return null;
+  }
+};
+
+export const migrate = async () => {
+  try {
+    const res = await apiInstance.post(`/${pluginId}/migrate`);
 
     return res.data;
   } catch (error) {

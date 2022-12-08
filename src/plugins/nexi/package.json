@@ -1,10 +1,10 @@
 {
   "name": "nexi",
-  "version": "0.0.0",
-  "description": "This is the description of the plugin.",
+  "version": "0.0.5",
+  "description": "Create your site instantly.",
   "strapi": {
     "name": "nexi",
-    "description": "Description of Nexi plugin",
+    "description": "Create your site instantly.",
     "kind": "plugin",
     "displayName": "Nexi"
   },

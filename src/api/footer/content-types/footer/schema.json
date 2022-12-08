@@ -4,12 +4,10 @@
   "info": {
     "singularName": "footer",
     "pluralName": "footers",
-    "displayName": "Footer",
-    "description": "Manage footer's content"
+    "displayName": "Footer"
   },
   "options": {
-    "draftAndPublish": false,
-    "comment": ""
+    "draftAndPublish": false
   },
   "attributes": {
     "layout": {

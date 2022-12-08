@@ -1,4 +1,36 @@
+const pkg = require("../../package.json");
+const {getInstalledVersion} = require("../services/store");
+
 module.exports = ({strapi}) => ({
+  async version(ctx) {
+    try {
+      const version = pkg.version;
+      const installedVersion = await getInstalledVersion(strapi);
+
+      ctx.body = {version, installedVersion};
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  async migrate(ctx) {
+    strapi.reload.isWatching = false;
+
+    try {
+      await strapi
+        .plugin("nexi")
+        .service("nexi")
+        .migrate();
+
+      setImmediate(() => strapi.reload());
+
+      // eslint-disable-next-line require-atomic-updates
+      ctx.body = {success: true};
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
   singleTypeStatus(ctx) {
     ctx.body = strapi
       .plugin("nexi")
@@ -26,24 +58,6 @@ module.exports = ({strapi}) => ({
       .service("nexi")
       .getSectionComponentStatus();
   },
-
-  // async init(ctx) {
-  //   strapi.reload.isWatching = false;
-
-  //   try {
-  //     const data = await strapi
-  //       .plugin("nexi")
-  //       .service("nexi")
-  //       .createCollections();
-  //       // .createComponents();
-
-  //     if (data) setImmediate(() => strapi.reload());
-
-  //     ctx.body = data;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // },
 
   async addContentType(ctx) {
     strapi.reload.isWatching = false;

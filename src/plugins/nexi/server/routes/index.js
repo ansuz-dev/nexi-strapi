@@ -23,15 +23,18 @@ module.exports = [
     handler: "nexi.sectionComponentStatus",
     config: {policies: []},
   },
-  // {
-  //   method: "GET",
-  //   path: "/init",
-  //   handler: "nexi.init",
-  //   config: {
-  //     policies: [],
-  //     auth: false,
-  //   },
-  // },
+  {
+    method: "GET",
+    path: "/version",
+    handler: "nexi.version",
+    config: {policies: []},
+  },
+  {
+    method: "POST",
+    path: "/migrate",
+    handler: "nexi.migrate",
+    config: {policies: []},
+  },
   {
     method: "POST",
     path: "/add/content-type",

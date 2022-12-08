@@ -4,12 +4,10 @@
   "info": {
     "singularName": "homepage",
     "pluralName": "homepages",
-    "displayName": "Homepage",
-    "description": "Manage homepage's content"
+    "displayName": "Homepage"
   },
   "options": {
-    "draftAndPublish": false,
-    "comment": ""
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
@@ -27,8 +25,7 @@
     },
     "sections": {
       "type": "dynamiczone",
-      "components": [
-      ]
+      "components": []
     }
   }
 }

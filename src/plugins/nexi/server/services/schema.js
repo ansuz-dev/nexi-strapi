@@ -49,12 +49,22 @@ const sections = {
 };
 
 const singles = {
-  "plugin::nexi.homepage": homepageCollection,
-  "plugin::nexi.navbar": navbarCollection,
-  "plugin::nexi.footer": footerCollection,
+  "api::homepage.homepage": homepageCollection,
+  "api::navbar.navbar": navbarCollection,
+  "api::footer.footer": footerCollection,
 };
 
-const collections = {"plugin::nexi.page": pageCollection};
+const collections = {"api::page.page": pageCollection};
+
+const components = {
+  ...items,
+  ...sections,
+};
+
+const contentTypes = {
+  ...singles,
+  ...collections,
+};
 
 const categories = {
   items,
@@ -148,12 +158,39 @@ const createComponents = async strapi => {
   }
 };
 
+const getRelatedComponents = (strapi, schema) => {
+  const attrs = schema.attributes;
+  const uids = Object.values(attrs).filter(e => e.type === "component")
+    .map(e => e.component);
+
+  const relatedComponents = [];
+
+  for (const uid of uids) {
+    if (!strapi.components[uid] && items[uid]) {
+      const component = items[uid];
+
+      relatedComponents.push({
+        tmpUID: uid,
+        category: "items",
+        displayName: component.info.displayName,
+        icon: component.info.icon,
+        attributes: component.attributes,
+      });
+    }
+  }
+
+  return relatedComponents;
+};
+
 module.exports = {
   items,
   sections,
   singles,
   collections,
+  components,
+  contentTypes,
   categories,
   itemRelations,
   createComponents,
+  getRelatedComponents,
 };
